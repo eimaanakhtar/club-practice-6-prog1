@@ -40,4 +40,25 @@ public class Club
     {
         return members.size(); 
     }
+    
+    /**
+     * 
+    * Determine the number of members who joined in the
+    * given month.
+    * @param month The month we are interested in.
+    * @return The number of members who joined in that month.
+    */
+    public int joinedInMonth(int month) {
+        if(month < 1 || month > 12) {
+            System.out.println("Error: Invalid Month");
+            return 0;
+      }
+      int count = 0;
+      for (Membership member : members) {
+          if(member.getMonth() == month) {
+              count++;
+          }
+      } 
+      return count;
+    }
 }
